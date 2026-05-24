@@ -1,296 +1,340 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Edwin</title>
+    <meta name="description"
+        content="Portfolio interactivo de Edwin Escobar: soporte técnico, desarrollo web, Java, sistemas y proyectos reales con estética EdwinOS/Ounett.">
+    <title>EdwinOS | Ounett Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
+
 <body>
     <div class="custom-cursor" id="custom-cursor"></div>
+
     <div class="loader" id="loader">
-    <div class="loader-box">
+        <div class="loader-box">
             <h2>EdwinOS</h2>
             <p id="loader-text">Booting system...</p>
-
             <div class="loader-bar">
                 <div class="loader-progress"></div>
             </div>
         </div>
     </div>
+
     <div class="matrix-bg"></div>
     <canvas id="matrix-canvas"></canvas>
     <canvas id="particles-canvas"></canvas>
     <div class="scanlines"></div>
 
-    <nav class="navbar">
-        <h1 class="logo">
-            <span class="logo-bracket">[</span>
-            EdwinOS
-            <span class="logo-bracket">]</span>
-        </h1>
-        <button class="mode-btn" id="mode-btn">Reboot System</button>
-        <ul class="nav-links">
+    <nav class="navbar" aria-label="Navegación principal">
+        <a href="#inicio" class="logo"><span>[</span>EdwinOS<span>]</span></a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#habilidades">Skills</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#laboratorio">Lab</a></li>
+            <li><a href="#terminal">Terminal</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
+        <div class="nav-actions">
+            <button class="recruiter-btn" id="recruiter-btn">Recruiter Mode</button>
+            <button class="mode-btn" id="mode-btn">Matrix</button>
+        </div>
     </nav>
 
-    <section class="hero" id="inicio">
-        <p class="system-text">[ SYSTEM ONLINE ]</p>
-
-        <div class="hero-frame ascii-photo">
-            <img src="img2.jpg" alt="Foto de Edwin" class="hero-img">
-
-            <pre class="ascii-overlay">
-        0101010101
-        EDWIN OS
-        1010101010
-        ACCESS OK
-        0101010101
-            </pre>
-        </div>
-
-        <h1>Hola, soy <span>Edwin</span></h1>
-
-        <p class="terminal-line">
-            edwin@portfolio:~$ <span id="typing-text"></span><span class="cursor">_</span>
-        </p>>
-        <p class="hero-description">
-            Estudiante de Ingeniería en Sistemas, apasionado por la tecnología,
-            el desarrollo web y la ciberseguridad.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#proyectos" class="btn">Ver proyectos</a>
-            <a href="#contacto" class="btn btn-secondary">Contactarme</a>
-        </div>
-    </section>
-        <section class="system-stats reveal">
-        <div class="stat-card">
-            <span>STATUS</span>
-            <strong>ONLINE</strong>
-        </div>
-
-        <div class="stat-card">
-            <span>MODE</span>
-            <strong>LEARNING</strong>
-        </div>
-
-        <div class="stat-card">
-            <span>FOCUS</span>
-            <strong>WEB DEV</strong>
-        </div>
-
-        <div class="stat-card">
-            <span>SYSTEM</span>
-            <strong>EdwinOS</strong>
-        </div>
-    </section>
-    <section class="about" id="sobre-mi">
-        <div class="about-card reveal">
-            <p class="card-label">cat about.txt</p>
-            <h2>Sobre mí</h2>
-            <p>
-                Soy Edwin, estudiante de Ingeniería en Sistemas. Me interesa el desarrollo web,
-                la ciberseguridad y todo lo relacionado con tecnología. Me gusta aprender paso a paso
-                y crear proyectos que me ayuden a crecer como programador.
-            </p>
-        </div>
-    </section>
-
-    <section class="skills" id="habilidades">
-        <p class="section-command">edwin@portfolio:~$ scan skills</p>
-        <h2>Habilidades</h2>
-        <p class="skills-text">Tecnologías y áreas que manejo actualmente.</p>
-
-        <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name"><i class="devicon-html5-plain colored"></i> HTML</span>
-                <span>75%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress html"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name"><i class="devicon-css3-plain colored"></i> CSS</span>
-                <span>65%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress css"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-                <span>55%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress js"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name"><i class="devicon-react-original colored"></i> React</span>
-                <span>35%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress react"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name">🛠️ Soporte técnico</span>
-                <span>85%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress soporte"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name"><i class="devicon-linux-plain colored"></i> Linux</span>
-                <span>60%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress linux"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name"><i class="devicon-windows8-original colored"></i> Windows</span>
-                <span>95%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress windows"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name"><i class="devicon-java-plain colored"></i> Java</span>
-                <span>85%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress java"></div></div>
-        </div>
-
-       <div class="skill reveal">
-            <div class="skill-info">
-                <span class="skill-name"><i class="devicon-mysql-plain colored"></i> SQL</span>
-                <span>35%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-progress sql"></div></div>
-        </div>
-    </section>
-
-    <section class="projects" id="proyectos">
-        <p class="section-command">edwin@portfolio:~$ ls projects/</p>
-        <h2>Mis proyectos</h2>
-
-        <div class="projects-container">
-            <div class="project-card reveal">
-                <div class="project-icon">💻</div>
-                <h3>Portfolio Hacker</h3>
-                <p>Portfolio personal con temática dark, terminal y efectos futuristas.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">Ver demo</a>
-                    <a href="#" class="project-link">Código</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-icon">⚙️</div>
-                <h3>Sistema Java</h3>
-                <p>Proyecto orientado a programación, lógica y manejo de datos.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">Ver demo</a>
-                    <a href="#" class="project-link">Código</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-icon">🚀</div>
-                <h3>Próximo proyecto</h3>
-                <p>Espacio reservado para futuros proyectos de desarrollo web.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">Ver demo</a>
-                    <a href="#" class="project-link">Código</a>
-                </div>
-            </div>
-            <div class="project-card reveal">
-                <div class="project-icon">🌐</div>
-                <h3>Landing Page</h3>
-                <p>Página web responsive con diseño moderno, animaciones suaves y enfoque profesional.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">Ver demo</a>
-                    <a href="#" class="project-link">Código</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-icon">☕</div>
-                <h3>Proyecto Java</h3>
-                <p>Aplicación hecha en Java para practicar lógica, POO y estructuras de datos.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">Ver demo</a>
-                    <a href="#" class="project-link">Código</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-icon">🦖</div>
-                <h3>Dino Easter Egg</h3>
-                <p>Detalle oculto del portfolio inspirado en el dinosaurio offline de Chrome.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">Ver demo</a>
-                    <a href="#" class="project-link">Código</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contacto">
-        <p class="section-command">edwin@portfolio:~$ connect contact</p>
-        <h2>Contacto</h2>
-        <p>¿Quieres hablar conmigo o ver más de mi trabajo?</p>
-
-        <div class="contact-links">
-            <a href="mailto:tu correo" class="contact-btn">Email</a>
-            <a href="#" class="contact-btn">GitHub</a>
-            <a href="#" class="contact-btn">LinkedIn</a>
-        </div>
-    </section>
-       <div class="terminal-body" id="terminal-body">
-
-                <p>Edwin Terminal v1.0</p>
-                <p>Type "help" to see commands.</p>
-
-                <div class="terminal-input-line">
-                    <span>edwin@system:~$</span>
-
-                    <input
-                        type="text"
-                        id="terminal-input"
-                        autocomplete="off"
-                    >
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-grid">
+                <div class="hero-content reveal active">
+                    <p class="system-text">[ SYSTEM ONLINE • ACCESS GRANTED ]</p>
+                    <p class="eyebrow">Soporte técnico • Web Dev • Java • Sistemas</p>
+                    <h1>Hola, soy <span>Edwin Escobar</span></h1>
+                    <p class="terminal-line">edwin@portfolio:~$ <span id="typing-text"></span><span
+                            class="cursor">_</span></p>
+                    <p class="hero-description">
+                        Estudiante de Ingeniería en Sistemas con experiencia real en soporte técnico, reparación de PCs,
+                        Windows, Linux, Office, atención al cliente, inventario y desarrollo de proyectos web. Este
+                        portfolio
+                        funciona como mi propio sistema: visual, interactivo y con personalidad.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="btn">Explorar proyectos</a>
+                        <a href="#terminal" class="btn btn-secondary">Abrir terminal</a>
+                        <a href="cv-edwin.pdf" class="btn btn-ghost" download>Descargar CV</a>
+                    </div>
                 </div>
 
+                <aside class="profile-console reveal active" aria-label="Consola de perfil">
+                    <div class="console-top"><span></span><span></span><span></span>
+                        <p>profile.exe</p>
+                    </div>
+                    <div class="hero-frame ascii-photo">
+                        <img src="img2.jpg" alt="Foto de Edwin Escobar" class="hero-img">
+                        <pre class="ascii-overlay">0101010101
+EDWIN OS
+OUNETT
+ACCESS OK
+0101010101</pre>
+                    </div>
+                    <div class="console-lines">
+                        <p><b>user:</b> Edwin Escobar</p>
+                        <p><b>role:</b> Systems Engineering Student</p>
+                        <p><b>focus:</b> Web Dev + IT Support</p>
+                        <p><b>status:</b> building real projects</p>
+                    </div>
+                </aside>
             </div>
+        </section>
 
-        </div>
+        <section class="system-stats reveal" aria-label="Dashboard EdwinOS">
+            <article class="stat-card"><span>STATUS</span><strong>ONLINE</strong></article>
+            <article class="stat-card"><span>LOCATION</span><strong>GUATEMALA</strong></article>
+            <article class="stat-card"><span>FOCUS</span><strong>WEB DEV</strong></article>
+            <article class="stat-card"><span>SYSTEM</span><strong>OUNETT</strong></article>
+        </section>
 
-    </section>
+        <section class="about" id="sobre-mi">
+            <div class="about-card reveal">
+                <p class="section-command">edwin@portfolio:~$ cat about.txt</p>
+                <h2>Sobre mí</h2>
+                <p>
+                    Soy Edwin, estudiante de Ingeniería en Sistemas. Me gusta crear cosas que se sientan diferentes:
+                    interfaces oscuras, terminales, easter eggs y proyectos que mezclan diseño con lógica real.
+                </p>
+                <p>
+                    Mi objetivo es convertirme en desarrollador web y crecer en el área IT. Ya tengo experiencia en
+                    soporte,
+                    reparación de equipos, mantenimiento de sistemas, Windows/Linux y atención al cliente, así que mi
+                    perfil
+                    combina parte técnica con resolución de problemas en el mundo real.
+                </p>
+            </div>
+        </section>
+
+        <section class="experience" id="experiencia">
+            <p class="section-command">edwin@portfolio:~$ history --work</p>
+            <h2>Experiencia y ruta</h2>
+            <p class="section-subtitle">Una mezcla de trabajo real, estudios y proyectos personales.</p>
+            <div class="timeline">
+                <article class="timeline-item reveal">
+                    <span class="timeline-date">2021 - 2026</span>
+                    <div>
+                        <h3>Peletería Continental</h3>
+                        <p>Ventas, atención al cliente, inventario, facturación y apoyo operativo.</p>
+                    </div>
+                </article>
+                <article class="timeline-item reveal">
+                    <span class="timeline-date">Actual</span>
+                    <div>
+                        <h3>Ingeniería en Sistemas</h3>
+                        <p>Formación en programación, estructuras de datos, bases de datos, electrónica y proyectos
+                            académicos.</p>
+                    </div>
+                </article>
+                <article class="timeline-item reveal">
+                    <span class="timeline-date">En progreso</span>
+                    <div>
+                        <h3>Desarrollo web + proyectos reales</h3>
+                        <p>Portfolio EdwinOS, Vital Snack, OuneAssist, sistemas Java y proyectos de electrónica.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="skills" id="habilidades">
+            <p class="section-command">edwin@portfolio:~$ scan skills --level</p>
+            <h2>Habilidades</h2>
+            <p class="section-subtitle">Tecnologías y áreas que manejo actualmente.</p>
+            <div class="skills-grid">
+                <article class="skill reveal">
+                    <div class="skill-info"><span><i class="devicon-html5-plain colored"></i> HTML</span><b>75%</b>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress html"></div>
+                    </div>
+                </article>
+                <article class="skill reveal">
+                    <div class="skill-info"><span><i class="devicon-css3-plain colored"></i> CSS</span><b>70%</b></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress css"></div>
+                    </div>
+                </article>
+                <article class="skill reveal">
+                    <div class="skill-info"><span><i class="devicon-javascript-plain colored"></i>
+                            JavaScript</span><b>55%</b></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress js"></div>
+                    </div>
+                </article>
+                <article class="skill reveal">
+                    <div class="skill-info"><span><i class="devicon-java-plain colored"></i> Java</span><b>85%</b></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress java"></div>
+                    </div>
+                </article>
+                <article class="skill reveal">
+                    <div class="skill-info"><span><i class="devicon-linux-plain colored"></i> Linux</span><b>60%</b>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress linux"></div>
+                    </div>
+                </article>
+                <article class="skill reveal">
+                    <div class="skill-info"><span><i class="devicon-windows8-original colored"></i>
+                            Windows</span><b>95%</b></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress windows"></div>
+                    </div>
+                </article>
+                <article class="skill reveal">
+                    <div class="skill-info"><span><i class="devicon-mysql-plain colored"></i> SQL</span><b>40%</b></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress sql"></div>
+                    </div>
+                </article>
+                <article class="skill reveal">
+                    <div class="skill-info"><span>🛠️ Soporte técnico</span><b>90%</b></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress soporte"></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="projects" id="proyectos">
+            <p class="section-command">edwin@portfolio:~$ ls projects/ --featured</p>
+            <h2>Proyectos destacados</h2>
+            <p class="section-subtitle">Proyectos con historia, tecnología y personalidad.</p>
+            <div class="projects-container">
+                <article class="project-card featured reveal">
+                    <div class="project-index">01</div>
+                    <div class="project-icon">💻</div>
+                    <h3>Portfolio EdwinOS</h3>
+                    <p>Sistema visual tipo terminal con Matrix mode, partículas, loader, cursor custom, easter eggs y
+                        modo recruiter.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                    <div class="project-links"><a href="#inicio" class="project-link">Demo</a><a href="#terminal"
+                            class="project-link">Terminal</a></div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-index">02</div>
+                    <div class="project-icon">🥗</div>
+                    <h3>Vital Snack</h3>
+                    <p>Landing page para emprendimiento de snacks y bebidas saludables personalizables.</p>
+                    <div class="tags"><span>Web</span><span>Branding</span><span>Responsive</span></div>
+                    <div class="project-links"><a href="#" class="project-link">Demo</a><a href="#"
+                            class="project-link">Código</a></div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-index">03</div>
+                    <div class="project-icon">🩺</div>
+                    <h3>Sistema Diagnóstico</h3>
+                    <p>Aplicación Java con Swing y árbol de decisión para simular diagnósticos básicos.</p>
+                    <div class="tags"><span>Java</span><span>Swing</span><span>POO</span></div>
+                    <div class="project-links"><a href="#" class="project-link">Demo</a><a href="#"
+                            class="project-link">Código</a></div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-index">04</div>
+                    <div class="project-icon">🎙️</div>
+                    <h3>OuneAssist</h3>
+                    <p>Asistente personal por voz para escritorio, pensado para comandos, búsquedas y automatización.
+                    </p>
+                    <div class="tags"><span>Python</span><span>Voice</span><span>IA</span></div>
+                    <div class="project-links"><a href="#" class="project-link">Demo</a><a href="#"
+                            class="project-link">Código</a></div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-index">05</div>
+                    <div class="project-icon">👏</div>
+                    <h3>Sensor de Aplausos</h3>
+                    <p>Circuito temporizado simulado en Proteus, activado por sonido.</p>
+                    <div class="tags"><span>Proteus</span><span>Electrónica</span><span>555</span></div>
+                    <div class="project-links"><a href="#" class="project-link">Demo</a><a href="#"
+                            class="project-link">Código</a></div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-index">06</div>
+                    <div class="project-icon">🦖</div>
+                    <h3>Dino Easter Egg</h3>
+                    <p>Detalle oculto inspirado en el dinosaurio offline. Probá escribir sudo dino en la terminal.</p>
+                    <div class="tags"><span>JS</span><span>UI</span><span>Fun</span></div>
+                    <div class="project-links"><a href="#terminal" class="project-link">Probar</a><a href="#"
+                            class="project-link">Código</a></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="lab" id="laboratorio">
+            <p class="section-command">edwin@portfolio:~$ open lab</p>
+            <h2>Ounett Lab</h2>
+            <p class="section-subtitle">Pequeños módulos interactivos para que el portfolio se sienta vivo.</p>
+            <div class="lab-grid">
+                <article class="lab-card reveal">
+                    <h3>System Scan</h3>
+                    <p>Analiza el estado visual del portfolio.</p><button class="mini-btn" data-action="scan">Run
+                        scan</button>
+                    <pre id="scan-output">waiting...</pre>
+                </article>
+                <article class="lab-card reveal">
+                    <h3>Theme Switch</h3>
+                    <p>Cambia entre modo normal, Matrix y recruiter.</p><button class="mini-btn"
+                        data-action="matrix">Toggle matrix</button><button class="mini-btn"
+                        data-action="recruiter">Recruiter</button>
+                </article>
+                <article class="lab-card reveal">
+                    <h3>Easter Egg</h3>
+                    <p>Activa el dino sin escribir comandos.</p><button class="mini-btn" data-action="dino">sudo
+                        dino</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="terminal-section reveal" id="terminal">
+            <div class="terminal-window">
+                <div class="terminal-header"><span class="dot red"></span><span class="dot yellow"></span><span
+                        class="dot green"></span><span class="terminal-title">Edwin Terminal v3.0</span></div>
+                <div class="terminal-body" id="terminal-body">
+                    <p>Edwin Terminal v3.0</p>
+                    <p>Escribe <strong>help</strong> para ver comandos disponibles.</p>
+                    <div class="terminal-input-line"><span>edwin@system:~$</span><input type="text" id="terminal-input"
+                            autocomplete="off" aria-label="Terminal input"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contacto">
+            <p class="section-command">edwin@portfolio:~$ connect contact</p>
+            <h2>Contacto</h2>
+            <p>¿Quieres hablar conmigo o ver más de mi trabajo?</p>
+            <div class="contact-links">
+                <a href="mailto:escobaredwin715@gmail.com" class="contact-btn">Email</a>
+                <a href="#" class="contact-btn">GitHub</a>
+                <a href="#" class="contact-btn">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <p>© 2026 Edwin Escobar. Todos los derechos reservados.</p>
+        <p>© 2026 Edwin Escobar. Developed by Ounett.</p>
     </footer>
+
     <div class="secret-dino" id="secret-dino">
-        <pre>
-                   __
-                  / _)
-           .-^^^-/ /
-         _/       /
-        <__.|_|-|_|
-        </pre>
+        <pre>               __
+              / _)
+       .-^^^-/ /
+     _/       /
+    <__.|_|-|_|</pre>
         <p>Connection lost... Dino mode activated.</p>
-     </div>
+    </div>
+    <div class="toast" id="toast">System ready.</div>
     <script src="script.js"></script>
 </body>
+
 </html>
